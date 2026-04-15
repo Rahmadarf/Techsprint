@@ -22,38 +22,22 @@ export default function Navbar() {
     ]
 
     return (
-        <nav className="w-full flex bg-white font-body">
-            <div className="w-full flex items-center justify-between px-10 py-5">
-
-                {/* Logo */}
-                <div className="flex items-center gap-x-3 group cursor-pointer">
-                    <div className="w-12 h-12 rounded-xl bg-gray-400 group-hover:rotate-10 transition-all duration-200" />
-                    <p className="font-heading font-semibold text-2xl text-black">Logo</p>
+        <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#EEF2F7]">
+            <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#00A8A8]" />
+                    <span className="font-heading font-bold text-[20px] text-[#00A8A8]">HealthPulse</span>
                 </div>
-
-                {/* Nav Links */}
-                <div className="flex gap-x-10 text-black text-sm">
-                    {navLinks.map((l) => {
-                        return (
-                            <div key={l.title}>
-                                <Link href={l.href}>
-                                    {l.title}
-                                </Link>
-                            </div>
-                        )
-                    })}
+                <div className="hidden md:flex items-center gap-8 text-[13px] text-text-secondary">
+                    <a href="#features" className="hover:text-primary transition-colors">Fitur</a>
+                    <a href="#stats" className="hover:text-primary transition-colors">Statistik</a>
+                    <a href="#testimonials" className="hover:text-primary transition-colors">Testimoni</a>
+                    <a href="#pricing" className="hover:text-primary transition-colors">Harga</a>
                 </div>
-
-                {/* Auth Button */}
-                <div className="flex gap-x-3">
-                    <Link href="/login" className="px-5 py-2 rounded-xl text-black">
-                        Login
-                    </Link>
-                    <Link href="/register" className="px-5 py-2 rounded-xl text-black">
-                        Register
-                    </Link>
+                <div className="flex items-center gap-3">
+                    <Link href="/auth/login" className="text-[13px] text-text-secondary hover:text-primary font-medium transition-colors">Masuk</Link>
+                    <Link href="/auth/register" className="hp-btn-primary text-[13px] py-2 px-4">Daftar Gratis</Link>
                 </div>
-
             </div>
         </nav>
     )
